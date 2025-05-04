@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloriaBloom</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<header id="main-header" class="fixed top-0 left-0 w-full text-white p-6 md:p-6 z-50 transition-all duration-300 ease-in-out animate-gradient bg-gradient-to-r from-pink-500 via-pink-300 to-pink-500 bg-opacity-50 backdrop-blur-md">
+    <div class="container mx-auto flex justify-between items-center">
+    
+      <!-- Logo + Nama -->
+      <div class="flex items-center">
+        <!-- Logo -->
+        <!-- <img src="image/logo.png" alt="Logo FloriaBloom" class="h-14 w-14 mr-3"> -->
+        <img src="image/logo.png" alt="Logo FloriaBloom" class="h-16 w-16 mr-3 rounded-full border-4 border-white shadow-lg">
+
+        <!-- Nama -->
+        <h1 class="text-2xl font-bold">FloriaBloom</h1>
+      </div>
+      <nav class="flex gap-4 md:gap-6">
+        <a href="#produk" class="hover:underline">Produk</a>
+        <a href="tentang.html" class="hover:underline">Tentang Kami</a>
+        <a href="kontak.html" class="hover:underline">Kontak</a>
+        <a href="komentar.html" class="hover:underline">Komentar</a>
+      </nav>
+    </div>
+
+    <style>
+      .animate-gradient {
+        background-size: 400% 400%;
+        animation: gradientShift 8s ease infinite;
+      }
+    
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      body {
+      background-color: #fff6fa;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    </style>
+  </header>
+
+  <script>
+    const header = document.getElementById('main-header');
+  
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        // Saat scroll turun
+        header.classList.remove('bg-opacity-50', 'backdrop-blur-md');
+        header.classList.add('bg-opacity-100');
+      } else {
+        // Saat di atas
+        header.classList.add('bg-opacity-50', 'backdrop-blur-md');
+        header.classList.remove('bg-opacity-100');
+      }
+    });
+  </script>  
+
+  <section id="hero" class="text-center py-40 bg-pink-100 text-white relative">
+
+    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000" id="bg-slider"></div>
+  
+    <div class="relative z-10">
+      <h2 class="text-4xl font-bold mb-4">Bunga Segar untuk Momen Spesial Anda</h2>
+      <p class="text-lg mb-8">Pesan sekarang dan buat hari istimewa menjadi lebih bermakna.</p>
+      <a href="#produk" class="bg-pink-600 text-white px-6 py-3 rounded-full text-lg hover:bg-pink-700">Lihat Produk</a>
+    </div>
+  
+  </section>
+  
+  <script>
+    // Array gambar background
+    const images = [
+      'image/toko2.jpg',
+      'image/toko.jpg',
+      'image/nyoba2.jpg'
+    ];
+  
+    let index = 0;
+    const bgSlider = document.getElementById('bg-slider');
+  
+    function changeBackground() {
+      bgSlider.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+  
+    changeBackground();
+    setInterval(changeBackground, 5000); // Ganti gambar setiap 5 detik
+  </script>
+  
+
+  <!-- Produk Section -->
+  <section id="produk" class="py-16 container mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-10">Produk Kami</h3>
+    
+      <!-- Produk halaman 1 -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      
+        <!-- Produk 1 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/mawar.jpg" alt="Buket Mawar" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Mawar</h2>
+          <p class="text-pink-700 font-bold">Rp150.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga mawar" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>          
+          
+        </div>
+  
+        <!-- Produk 2 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/tulip.jpg" alt="Buket Tulip" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Tulip</h2>
+          <p class="text-pink-700 font-bold">Rp200.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga tulip" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 3 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/lily.jpg" alt="Buket Lily" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Lily</h2>
+          <p class="text-pink-700 font-bold">Rp180.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga lily" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 4 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/anggrek.jpg" alt="Buket Anggrek" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Anggrek</h2>
+          <p class="text-pink-700 font-bold">Rp170.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Anggrek" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 5 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/mawar2.jpg" alt="Buket Mawar Pink" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Mawar Pink</h2>
+          <p class="text-pink-700 font-bold">Rp160.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Mawar Pink" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 6 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/Aster.jpg" alt="Buket Aster" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Aster</h2>
+          <p class="text-pink-700 font-bold">Rp140.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Aster" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 7 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/sunflower1.jpg" alt="Buket Sunflower" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Sunflower</h2>
+          <p class="text-pink-700 font-bold">Rp190.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Sunflower" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 8 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/garberra1.jpg" alt="Buket Gerbera" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Gerbera</h2>
+          <p class="text-pink-700 font-bold">Rp130.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Gerbera" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 9 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/peony.jpg" alt="Buket Peony" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Peony</h2>
+          <p class="text-pink-700 font-bold">Rp220.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Peony" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 10 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/daffodil.jpg" alt="Buket Daffodil" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Daffodil</h2>
+          <p class="text-pink-700 font-bold">Rp155.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Daffodil" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+
+        <!-- Produk 11 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/garberra2.jpg" alt="Buket Gerbera Mix" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Buket Gerbera Mix</h2>
+          <p class="text-pink-700 font-bold">Rp140.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli buket bunga Gerbera Mix" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+
+        <!-- Produk 12 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/papannn.jpg" alt="Acrilik Mirror" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Acrilik Mirror</h2>
+          <p class="text-pink-700 font-bold">Rp200.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli Papan Akrilik" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+
+        <!-- Produk 13 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/akrilik.jpg" alt="Akrilik Nama" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Aklirik Nama</h2>
+          <p class="text-pink-700 font-bold">Rp70.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli Aklirik Nama" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 14 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/lilin1.jpg" alt="Lilin Aromatherapy" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Lilin Aromatherapy</h2>
+          <p class="text-pink-700 font-bold">Rp50.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli Lilin Aromatherapy" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+  
+        <!-- Produk 15 -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="image/parfum1.jpg" alt="Sélène Parfume" class="w-full h-48 object-cover rounded">
+          <h2 class="text-lg font-semibold mt-4">Selene Parfume</h2>
+          <p class="text-pink-700 font-bold">Rp120.000</p>
+          <a href="https://wa.me/6282335601037?text=Halo saya mau membeli Sélène Parfume" target="_blank" class="mt-3 block w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded text-center">
+            Beli Sekarang
+          </a>
+        </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-pink-600 text-white text-center py-4">
+    <p>&copy; 2025 FloriaBloom. All rights reserved.</p>
+  </footer>
+</body>
+</html>

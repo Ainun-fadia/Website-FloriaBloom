@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ainun Fadia Haya - FloriaBloom</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #fff6fa; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; padding: 15px 20px; background: linear-gradient(to right, #ec4899, #f472b6, #ec4899); background-size: 400% 400%; animation: gradientShift 8s ease infinite; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    header .header-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .container { max-width: 1200px; margin: 50px auto; padding: 20px; text-align: center; }
+    .about-section { display: flex; align-items: center; justify-content: center; padding: 50px 20px; background-color: #fff6fa; margin-top: 50px; flex-wrap: wrap; }
+    .about-text { flex: 1; max-width: 500px; margin-right: 30px; }
+    .about-text h2 { color: #b12d6d; margin-bottom: 20px; font-size: 28px; }
+    .about-text p { color: #555; font-size: 16px; line-height: 1.6; }
+    .about-image { flex: 1; max-width: 500px; }
+    .about-image img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .image-grid { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+    .image-grid img { width: 300px; height: 200px; object-fit: cover; border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+    .image-grid img:hover { transform: scale(1.05); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+    .profile-photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 20px auto; display: block; }
+    .button { display: inline-block; padding: 10px 20px; background-color: #d81b60; color: white; text-decoration: none; border-radius: 5px; margin: 5px; }
+    .button:hover { background-color: #ad1457; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="main-header">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+    <div class="flex items-center space-x-4">
+      <img src="image/logo.png" alt="Logo FloriaBloom" class="h-16 w-16 rounded-full border-4 border-white shadow-lg">
+      <h1 class="text-2xl font-bold">FloriaBloom</h1>
+    </div>
+    <nav class="flex gap-4 md:gap-6">
+      <a href="FloriaBloom.html" class="hover:underline">Produk</a>
+      <a href="tentang.html" class="hover:underline">Tentang Kami</a>
+      <a href="kontak.html" class="hover:underline">Kontak</a>
+      <a href="komentar.html" class="hover:underline">Komentar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Bagian Profil -->
+<div class="container mt-24">
+  <h1 class="text-3xl font-bold">Ainun Fadia Haya</h1>
+  <img src="image/aku.jpg" alt="Foto Ainun Fadia Haya" class="profile-photo">
+  <p><strong>Lokasi:</strong> Jl. Mawar No. 10, Jember, Indonesia</p>
+  <p><strong>Kontak:</strong>
+    <a href="mailto:ainunfadiahaya@gmail.com?subject=Pesan%20dari%20Website%20FloriaBloom" class="text-green-500">Email</a> |
+    <a href="https://wa.me/6282335601037" target="_blank" class="text-green-500">WhatsApp</a> |
+    <a href="https://instagram.com/fadiahaya1" target="_blank" class="text-green-500">Instagram</a>
+  </p>
+</div>
+
+<!-- Tentang FloriaBloom -->
+<div class="about-section" id="tentang">
+  <div class="about-text">
+    <h2>💐 Tentang FloriaBloom</h2>
+    <p>Halo! Saya Ainun Fadia Haya, pendiri FloriaBloom, toko bunga lokal berdiri sejak 2023.
+    Misi kami menghadirkan keindahan bunga segar, rangkaian elegan, dan papan akrilik spesial.
+    Setiap buket kami rangkai dengan cinta dan seni untuk setiap momen Anda. 📍 Jember & sekitarnya!</p>
+
+    <h2>🎓 Spesialis Buket & Papan Ucapan Wisuda</h2>
+    <p>✅ Buket bunga segar & elegan<br>
+    ✅ Papan akrilik desain eksklusif<br>
+    ✅ Pengiriman cepat & aman ke lokasi kampus</p>
+
+    <div class="mt-4">
+      <a href="https://wa.me/6282335601037" class="button">Hubungi Kami</a>
+      <a href="FloriaBloom.html" class="button">Lihat Koleksi Kami</a>
+    </div>
+  </div>
+  <div class="about-image">
+    <img src="image/toko.jpg" alt="toko floriabloom">
+  </div>
+</div>
+
+<!-- Galeri -->
+<div class="container" id="galeri">
+  <h1 class="text-2xl font-bold">📌 Sering hadir di momen wisuda kampus:</h1>
+  <div class="image-grid">
+    <img src="image/unmuh.jpg" alt="unmuh">
+    <img src="image/Unej-Jember.jpg" alt="Unej-Jember">
+    <img src="image/uin-jember.jpeg" alt="uin-jember">
+  </div>
+  <div class="image-grid">
+    <img src="image/UIJ-2.jpg" alt="UIJ-2">
+    <img src="image/UDS.jpeg" alt="UDS">
+    <img src="image/mandala.jpg" alt="mandala">
+  </div>
+</div>
+
+<!-- ✅ Testimoni Pelanggan -->
+<div class="container mt-16">
+    <h2 class="text-2xl font-bold text-pink-600 mb-6">❤️ Testimoni Pelanggan Kami</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+      <!-- Testimoni 1 -->
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+        <div class="flex items-center mb-4">
+          <img src="image/nanda.jpeg" alt="Nanda" class="w-12 h-12 rounded-full mr-3 border-2 border-pink-300">
+          <div>
+            <p class="font-semibold">Nanda - Jember</p>
+            <p class="text-yellow-400">⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+        <p class="text-gray-600 italic">"Pelayanannya ramah banget, bunga yang dikirim fresh dan cantik! Recommended buat hadiah spesial 💐"</p>
+      </div>
+  
+      <!-- Testimoni 2 -->
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+        <div class="flex items-center mb-4">
+          <img src="image/agus.jpeg" alt="Agus" class="w-12 h-12 rounded-full mr-3 border-2 border-pink-300">
+          <div>
+            <p class="font-semibold">Agus - Banyuwangi</p>
+            <p class="text-yellow-400">⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+        <p class="text-gray-600 italic">"Pesan bunga papan via WA, proses cepat & hasilnya memuaskan. Klien saya juga happy! 👍"</p>
+      </div>
+  
+      <!-- Testimoni 3 -->
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+        <div class="flex items-center mb-4">
+          <img src="image/lia.jpg" alt="Lia" class="w-12 h-12 rounded-full mr-3 border-2 border-pink-300">
+          <div>
+            <p class="font-semibold">Lia - Lumajang</p>
+            <p class="text-yellow-400">⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+        <p class="text-gray-600 italic">"Suka banget sama bouquet-nya, fresh & desainnya cantik. Udah langganan di FloriaBloom! 🌷"</p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
