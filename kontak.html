@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontak Kami - FloriaBloom</title>
-  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* Animasi header */
-    .animate-gradient {
-      background-size: 400% 400%;
+    /* Font & Warna Umum */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff6fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to right, #ec4899, #f472b6, #ec4899);
       animation: gradientShift 8s ease infinite;
+      background-size: 400% 400%;
+      color: white;
+      padding: 15px 20px;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     @keyframes gradientShift {
@@ -18,28 +39,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    body {
-      background-color: #fff6fa;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-        header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 50;
-      padding: 15px 20px;
-      background: linear-gradient(to right, #ec4899, #f472b6, #ec4899);
-      background-size: 400% 400%;
-      animation: gradientShift 8s ease infinite;
-      color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    header .header-container {
+    .header-container {
       max-width: 1200px;
       margin: auto;
       display: flex;
@@ -51,20 +51,25 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo-container img {
-      height: 50px;
-      width: 50px;
+      height: 55px;
+      width: 55px;
       border-radius: 50%;
       border: 3px solid white;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
+    .logo-container h1 {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
     nav {
       display: flex;
-      gap: 30px; /* ✅ Tambahan biar lebih ke kanan */
+      gap: 30px;
       margin-right: 20px;
       align-items: center;
     }
@@ -72,15 +77,15 @@
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: normal;
       font-size: 16px;
+      transition: 0.3s;
     }
 
     nav a:hover {
       text-decoration: underline;
+      opacity: 0.85;
     }
 
-    /* Hamburger Icon */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -94,17 +99,18 @@
       background: white;
     }
 
-    /* ✅ RESPONSIVE */
     @media (max-width: 768px) {
       nav {
         display: none;
         flex-direction: column;
         width: 100%;
-        margin: 10px 0 0 0;
+        margin-top: 10px;
       }
+
       nav.show {
         display: flex;
       }
+
       .hamburger {
         display: flex;
       }
@@ -112,24 +118,25 @@
 
     /* Kontak Section */
     .contact-section {
-      max-width: 1000px;
-      margin: 120px auto 50px auto;
-      padding: 30px;
-      background: #f9f9ff;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 130px auto 60px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       text-align: center;
     }
 
     .contact-section h2 {
-      color: #1a237e;
-      margin-bottom: 10px;
+      color: #ec4899;
       font-size: 36px;
+      margin-bottom: 10px;
     }
 
     .contact-section p {
-      color: #555;
+      color: #666;
       margin-bottom: 30px;
+      font-size: 16px;
     }
 
     .contact-info {
@@ -141,48 +148,70 @@
     }
 
     .contact-info div {
+      background-color: #fff0f5;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       flex: 1;
-      min-width: 250px;
+      min-width: 220px;
+      transition: 0.3s ease;
+    }
+
+    .contact-info div:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
     .contact-info h4 {
+      color: #d63384;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .contact-info p {
+      margin: 0;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .operasional {
+      margin-top: 40px;
+    }
+
+    .operasional h4 {
       color: #5c6bc0;
       margin-bottom: 5px;
     }
 
-    .contact-info p {
+    .operasional p {
       color: #333;
-      margin: 0;
+      font-size: 15px;
     }
-
   </style>
 </head>
 <body>
 
   <!-- ✅ Header -->
   <header>
-    <!-- ✅ Logo + Nama -->
     <div class="header-container">
-      <!-- ✅ Logo + Nama -->
       <div class="logo-container">
-        <img src="image/logo.png" alt="Logo FloriaBloom" class="h-24 w-24 rounded-full border-4 border-white shadow-md">
-        <h1 class="text-2xl font-bold">FloriaBloom</h1>
+        <img src="image/logo.png" alt="Logo FloriaBloom" />
+        <h1>FloriaBloom</h1>
       </div>
 
-    <!-- ✅ Hamburger Icon -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
-    <!-- ✅ Menu -->
-    <nav id="nav-menu">
-      <a href="FloriaBloom.html">Produk</a>
-      <a href="tentang.html">Tentang Kami</a>
-      <a href="kontak.html">Kontak</a>
-      <a href="komentar.html" class="hover:underline">Komentar</a>
-    </nav>
+      <nav id="nav-menu">
+        <a href="index.html">Produk</a>
+        <a href="tentang.html">Tentang Kami</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="komentar.html">Komentar</a>
+      </nav>
+    </div>
   </header>
 
   <!-- ✅ Kontak Section -->
@@ -195,21 +224,19 @@
         <h4>Alamat</h4>
         <p>Jl. Mawar No. 10, Jember</p>
       </div>
-
       <div>
         <h4>Telepon</h4>
         <p>0812-3456-7890</p>
       </div>
-
       <div>
         <h4>Email</h4>
         <p>floriabloom@email.com</p>
       </div>
     </div>
 
-    <div style="margin-top: 40px;">
-      <h4 style="color: #5c6bc0;">Jam Operasional</h4>
-      <p style="color: #333;">Senin - Sabtu, 08:00 - 17:00</p>
+    <div class="operasional">
+      <h4>Jam Operasional</h4>
+      <p>Senin - Sabtu, 08:00 - 17:00</p>
     </div>
   </section>
 
