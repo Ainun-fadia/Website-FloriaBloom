@@ -22,7 +22,7 @@
 
       <!-- ✅ Menu -->
       <nav class="text-sm space-x-4 hidden md:flex font-normal">
-        <a href="FloriaBloom.html" class="hover:underline">Produk</a>
+        <a href="index.html" class="hover:underline">Produk</a>
         <a href="tentang.html" class="hover:underline">Tentang Kami</a>
         <a href="kontak.html" class="hover:underline">Kontak</a>
         <a href="komentar.html" class="hover:underline">Komentar</a>
@@ -34,64 +34,61 @@
   <div class="pt-28"></div>
 
   <!-- ✅ Section Komentar -->
-  <section class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg">
-    <h2 class="text-3xl font-bold text-center text-pink-600 mb-6">Komentar Pelanggan</h2>
+  <section id="komentar" class="max-w-3xl mx-auto bg-white/80 p-8 rounded-2xl shadow-xl mt-12 backdrop-blur-md">
+  <h2 class="text-4xl font-extrabold text-center text-pink-500 mb-8 tracking-wide">Komentar Pelanggan</h2>
 
-    <!-- Daftar Komentar -->
-    <div class="space-y-6">
+  <!-- Form Komentar -->
+  <form id="formKomentar" class="space-y-5">
+    <input type="text" id="nama" placeholder="🌼 Nama Anda" required
+           class="w-full p-4 border border-pink-200 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-gray-700 shadow-sm placeholder-pink-300 bg-white/80 transition duration-300">
 
-      <!-- Komentar 1 -->
-      <div class="bg-pink-50 p-4 rounded-lg shadow-sm">
-        <p class="text-gray-700">"Bunganya fresh banget! Pengiriman juga cepat. Terima kasih FloriaBloom 🌸"</p>
-        <p class="text-sm text-gray-500 mt-2">- Anisa, Jember</p>
-      </div>
+    <textarea id="pesan" rows="4" placeholder="💬 Tulis komentar Anda..." required
+              class="w-full p-4 border border-pink-200 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-gray-700 shadow-sm placeholder-pink-300 bg-white/80 transition duration-300"></textarea>
 
-      <!-- Komentar 2 -->
-      <div class="bg-pink-50 p-4 rounded-lg shadow-sm">
-        <p class="text-gray-700">"Rangkaian bunganya cantik, cocok untuk acara wisuda adik saya. Sukses selalu!"</p>
-        <p class="text-sm text-gray-500 mt-2">- Dwi, Banyuwangi</p>
-      </div>
+    <button type="submit"
+            class="w-full bg-gradient-to-r from-pink-400 to-pink-500 text-white py-3 rounded-xl font-semibold tracking-wide shadow-md hover:from-pink-500 hover:to-pink-600 hover:shadow-lg transition duration-300 ease-in-out">
+      Kirim Komentar ✨
+    </button>
+  </form>
 
-      <!-- Komentar 3 -->
-      <div class="bg-pink-50 p-4 rounded-lg shadow-sm">
-        <p class="text-gray-700">"Puas banget belanja di sini, recommended buat yang cari bunga segar!"</p>
-        <p class="text-sm text-gray-500 mt-2">- Sari, Lumajang</p>
-      </div>
-
-    </div>
-
-    <!-- ✅ Form Tambah Komentar -->
-    <div class="mt-10">
-      <h3 class="text-2xl font-semibold text-center mb-4 text-pink-500">Tulis Komentar Anda</h3>
-      <form name="submit-to-google-sheet" class="space-y-4">
-        <input type="text" name="nama" placeholder="Nama Anda" required class="w-full p-3 border rounded-lg">
-        <textarea name="komentar" placeholder="Komentar Anda" required class="w-full p-3 border rounded-lg" rows="4"></textarea>
-        <button type="submit" class="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition">Kirim</button>
-      </form>
-
-      <!-- ✅ Pesan Sukses -->
-      <p id="pesan-sukses" class="text-green-600 text-center mt-4 hidden">Komentar Anda berhasil dikirim! 🌸</p>
-    </div>
-
-  </section>
+  <!-- Daftar Komentar -->
+  <div id="daftarKomentar" class="space-y-4 mt-10">
+    <!-- Komentar akan ditambahkan di sini -->
+  </div>
+</section>
 
   <!-- ✅ Script Kirim ke Google Sheet -->
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwjw4vrE_3IeCKuH0UFsaiRBhnfbmXd9xoXeQhcvGToQZ8a9y6oBTL3WSYF93wkTieJ/exec';
-    const form = document.forms['submit-to-google-sheet'];
-    const pesan = document.getElementById('pesan-sukses');
+  const form = document.getElementById('formKomentar');
+  const daftarKomentar = document.getElementById('daftarKomentar');
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          pesan.classList.remove('hidden');
-          form.reset();
-          setTimeout(() => pesan.classList.add('hidden'), 3000);
-        })
-        .catch(error => console.error('Error!', error.message));
-    });
-  </script>
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
+    const nama = document.getElementById('nama').value.trim();
+    const pesan = document.getElementById('pesan').value.trim();
+
+    if (nama && pesan) {
+      const komentarBaru = document.createElement('div');
+      komentarBaru.className = 'bg-pink-50 p-5 rounded-xl shadow-sm border border-pink-100 animate-fade-in';
+      komentarBaru.innerHTML = `
+        <p class="text-gray-800 text-lg leading-relaxed">"${pesan}"</p>
+        <p class="text-sm text-pink-500 font-medium mt-2">- ${nama}</p>
+      `;
+      daftarKomentar.prepend(komentarBaru);
+
+      form.reset();
+    }
+  });
+</script>
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out both;
+  }
+</style>
 </body>
 </html>
